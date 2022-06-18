@@ -13,14 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::redirect('/','login');
 Route::get("/login", [\App\Http\Controllers\AuthController::class, 'showLoginForm']);
 Route::post("/post-login", [\App\Http\Controllers\AuthController::class, 'loginAction']);
 Route::middleware(\App\Http\Middleware\Autentikasi::class)->group(function (){
-    Route::get("/admin/dashboard", function (Request $request){
-        var_dump($request->session()->get('username'));
-       return "WKWKWKKW";
-    });
+    Route::get("/admin/dashboard", [App\Http\Controllers\admin\Home::class, 'index']);
 });
