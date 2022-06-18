@@ -5,10 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\UserModel;
 use Hash;
+use Illuminate\Support\Facades\DB;
 use Session;
 use Illuminate\Session\TokenMismatchException;
 use Illuminate\Support\Facades\Auth;
-
 
 class AuthController extends Controller
 {
@@ -30,16 +30,19 @@ class AuthController extends Controller
         if ($request->get("_token") !== csrf_token()) {
             throw new TokenMismatchException();
         }
-        $data = array(
-            "username" => $request->get('username'),
-            "password" => $request->get('password')
+        $user = DB::table('tb_admin')->where(
+            'username' ,'=',$request->post('username'))
+        ->where(
+            'password' ,'=',$request->post('password')
         );
-        if(Auth::attempt($data)) {
+       if($user->count() > 0) {
+           session()->put("username", "odada");
+           return redirect("admin/dashboard");
+       } else {
+           Session::flash("messages", 'Login gagal username dan password salah');
+           return redirect("login");
+       }
 
-        } else{
-           session()->flash("messages", "Login gagal username dan password salah");
-            return redirect('/login');
-        }
     }
 
 }
