@@ -4,9 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\UserModel;
+use Hash;
+use Session;
 use Illuminate\Session\TokenMismatchException;
 use Illuminate\Support\Facades\Auth;
-use MongoDB\Driver\Session;
+
 
 class AuthController extends Controller
 {
@@ -33,7 +35,7 @@ class AuthController extends Controller
             "password" => $request->get('password')
         );
         if(Auth::attempt($data)) {
-              session()->
+
         } else{
            session()->flash("messages", "Login gagal username dan password salah");
             return redirect('/login');
