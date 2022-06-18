@@ -17,3 +17,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get("/login", [\App\Http\Controllers\AuthController::class, 'showLoginForm']);
+Route::post("/post-login", [\App\Http\Controllers\AuthController::class, 'loginAction']);
