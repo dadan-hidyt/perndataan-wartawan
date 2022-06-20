@@ -21,6 +21,7 @@ class CreateTbWartawan extends Migration
             $table->string('telepon');
             $table->date('tanggal_lahir');
             $table->text('alamat');
+            $table->string("wilayah");
         });
     }
 

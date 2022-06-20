@@ -1,6 +1,10 @@
 <?php
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use \App\Http\Controllers\AuthController;
+use \App\Http\Middleware\Autentikasi;
+use App\Http\Controllers\admin\Home;
+use App\Http\Controllers\Admin\Wilayah;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,11 +18,23 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::redirect('/','login');
-Route::get("/login", [\App\Http\Controllers\AuthController::class, 'showLoginForm'])->name('login');
-Route::post("/post-login", [\App\Http\Controllers\AuthController::class, 'loginAction'])->name('post-login');
-Route::middleware(\App\Http\Middleware\Autentikasi::class)->group(function (){
-    Route::get("/admin/dashboard", [App\Http\Controllers\admin\Home::class, 'index'])->name('admin.dashboard');
-    Route::get("/admin/wartawan", [App\Http\Controllers\admin\Home::class, 'index'])->name('admin.wartawan');
-    Route::get("/admin/berita", [App\Http\Controllers\admin\Home::class, 'index'])->name('admin.berita');
+Route::get("/login", [AuthController::class, 'showLoginForm'])->name('login');
+Route::post("/post-login", [AuthController::class, 'loginAction'])->name('post-login');
+Route::middleware(Autentikasi::class)->group(function (){
+    Route::get("/admin/dashboard", [Home::class, 'index'])->name('admin.dashboard');
+    Route::get("/admin/wartawan", [Home::class, 'index'])->name('admin.wartawan');
+    Route::get("/admin/berita", [Home::class, 'index'])->name('admin.berita');
+    //route for wilayah
+    Route::get("/admin/wilayah", [Wilayah::class, 'index'])->name('admin.wilayah');
+    Route::post("/admin/wilayah/add", [Wilayah::class, 'add'])->name('admin.wilayah.add');
+    Route::get("/admin/wilayah/delete/{any}", [Wilayah::class, 'delete'])->name('admin.wilayah.delete');
+
+
 
 });
+Route::get('logout', function (){
+   session()->regenerateToken();
+   session()->forget('username');
+   session()->flash('messages', 'berhasil keluar');
+   return redirect('login');
+})->name('logout');

@@ -37,7 +37,10 @@
                 <a href="{{route('admin.wartawan')}}"><i class="fas fa-users"></i>Wartawan</a>
             </li>
             <li>
-                <a href="{{route('admin.berita')}}"><i class="fas fa-table"></i> Berita</a>
+                <a href="{{route('admin.berita')}}"><i class="fa fa-book"></i> Berita</a>
+            </li>
+            <li>
+                <a href="{{route('admin.wilayah')}}"><i class="fa fa-globe"></i> Wilayah</a>
             </li>
         </ul>
     </nav>
@@ -56,7 +59,7 @@
                             </a>
                             <div class="dropdown-menu dropdown-menu-end nav-link-menu">
                                 <ul class="nav-list">
-                                    <li><a href="" class="dropdown-item"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+                                    <li><a href="{{route('logout')}}" class="dropdown-item"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -74,6 +77,9 @@
 <script src="{{asset('assets/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
 <script src="{{asset('assets/vendor/chartsjs/Chart.min.js')}}"></script>
 <script src="{{asset('assets/js/dashboard-charts.js')}}"></script>
+@section('jsbottom')
+@endsection()
+@yield('jsbottom')
 <script src="{{asset('assets/js/script.js')}}"></script>
 </body>
 </html>
