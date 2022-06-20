@@ -31,13 +31,13 @@
         </div>
         <ul class="list-unstyled components text-secondary">
             <li>
-                <a href="dashboard.html"><i class="fas fa-home"></i> Dashboard</a>
+                <a href="{{route('admin.dashboard')}}"><i class="fas fa-home"></i> Dashboard</a>
             </li>
             <li>
-                <a href="forms.html"><i class="fas fa-users"></i> Data Wartawan</a>
+                <a href="{{route('admin.wartawan')}}"><i class="fas fa-users"></i>Wartawan</a>
             </li>
             <li>
-                <a href="tables.html"><i class="fas fa-table"></i> Berita</a>
+                <a href="{{route('admin.berita')}}"><i class="fas fa-table"></i> Berita</a>
             </li>
         </ul>
     </nav>

@@ -14,8 +14,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::redirect('/','login');
-Route::get("/login", [\App\Http\Controllers\AuthController::class, 'showLoginForm']);
-Route::post("/post-login", [\App\Http\Controllers\AuthController::class, 'loginAction']);
+Route::get("/login", [\App\Http\Controllers\AuthController::class, 'showLoginForm'])->name('login');
+Route::post("/post-login", [\App\Http\Controllers\AuthController::class, 'loginAction'])->name('post-login');
 Route::middleware(\App\Http\Middleware\Autentikasi::class)->group(function (){
-    Route::get("/admin/dashboard", [App\Http\Controllers\admin\Home::class, 'index']);
+    Route::get("/admin/dashboard", [App\Http\Controllers\admin\Home::class, 'index'])->name('admin.dashboard');
+    Route::get("/admin/wartawan", [App\Http\Controllers\admin\Home::class, 'index'])->name('admin.wartawan');
+    Route::get("/admin/berita", [App\Http\Controllers\admin\Home::class, 'index'])->name('admin.berita');
+
 });

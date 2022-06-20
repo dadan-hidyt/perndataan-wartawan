@@ -18,7 +18,7 @@
                            <b>Total Wartawan</b>
                        </div>
                         <div class="mb-3">
-                            <h2>89</h2>
+                            <h2>{{$total_wartawan}}</h2>
                         </div>
                     </div>
                 </div>
@@ -31,7 +31,7 @@
                             <b>Total Berita</b>
                         </div>
                         <div class="mb-3">
-                            <h2>89</h2>
+                            <h2>{{$total_berita}}</h2>
                         </div>
                     </div>
                 </div>

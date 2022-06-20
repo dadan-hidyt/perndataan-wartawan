@@ -32,7 +32,7 @@
                         {{session()->get('messages')}}
                     </div>
                 @endif
-                <form action="{{URL::to('post-login')}}" method="POST">
+                <form action="{{route('post-login')}}" method="POST">
                     @csrf
                     <div class="mb-3 text-start">
                         <label for="username" class="form-label">Username</label>

@@ -21,6 +21,7 @@ class AuthController extends Controller
     }
     public function loginAction(Request $request)
     {
+        //lets validation
         $request->validate([
             'username' => 'required',
             'password' => 'required',
