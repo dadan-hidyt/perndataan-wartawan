@@ -36,7 +36,11 @@ class AuthController extends Controller
             'password' ,'=',$request->post('password')
         );
        if($user->count() > 0) {
-           session()->put("username", "odada");
+           $user_data = DB::table('tb_admin')
+               ->where('username','=',$request->post('username'))
+               ->first();
+           $usename = $user_data->nama;
+           session()->put("username", $request->post('username'));
            return redirect("admin/dashboard");
        } else {
            Session::flash("messages", 'Login gagal username dan password salah');
