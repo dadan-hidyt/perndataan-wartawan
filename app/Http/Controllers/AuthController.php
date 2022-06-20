@@ -36,11 +36,18 @@ class AuthController extends Controller
             'password' ,'=',$request->post('password')
         );
        if($user->count() > 0) {
+           /**
+            * Fungsi untuk mendapatkan data user yang sudah login
+            */
            $user_data = DB::table('tb_admin')
                ->where('username','=',$request->post('username'))
                ->first();
-           $usename = $user_data->nama;
-           session()->put("username", $request->post('username'));
+           //ambil nama nya
+           $nama = $user_data->nama;
+           $username = $user_data->username;
+           //masukan username nya ke session
+           session()->put("nama", $nama);
+           session()->put("username", $username);
            return redirect("admin/dashboard");
        } else {
            Session::flash("messages", 'Login gagal username dan password salah');
