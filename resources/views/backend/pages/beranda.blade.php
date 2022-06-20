@@ -37,6 +37,19 @@
                 </div>
             </div>
 
+            <div class="col-12 col-md-4">
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <div class="mb-3">
+                            <b>Wilayah</b>
+                        </div>
+                        <div class="mb-3">
+                            <h2>{{$wilayah}}</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
 @endsection

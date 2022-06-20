@@ -54,7 +54,6 @@ class AuthController extends Controller
            Session::flash("messages", 'Login gagal username dan password salah');
            return redirect("login");
        }
-
     }
 
 }

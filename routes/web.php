@@ -16,7 +16,7 @@ use App\Http\Controllers\Admin\Wilayah;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+#redirect
 Route::redirect('/','login');
 Route::get("/login", [AuthController::class, 'showLoginForm'])->name('login');
 Route::post("/post-login", [AuthController::class, 'loginAction'])->name('post-login');
@@ -28,10 +28,8 @@ Route::middleware(Autentikasi::class)->group(function (){
     Route::get("/admin/wilayah", [Wilayah::class, 'index'])->name('admin.wilayah');
     Route::post("/admin/wilayah/add", [Wilayah::class, 'add'])->name('admin.wilayah.add');
     Route::get("/admin/wilayah/delete/{any}", [Wilayah::class, 'delete'])->name('admin.wilayah.delete');
-
-
-
 });
+#route untuk logout
 Route::get('logout', function (){
    session()->regenerateToken();
    session()->forget('username');

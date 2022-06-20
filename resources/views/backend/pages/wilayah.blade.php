@@ -77,6 +77,7 @@
 @endsection
 
 @section('jsbottom')
+    @parent
     <script src="{{asset('assets/vendor/datatables/datatables.min.js')}}"></script>
     <script>
         // Initiate datatables in roles, tables, users page

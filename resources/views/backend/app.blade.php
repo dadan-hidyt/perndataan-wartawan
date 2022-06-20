@@ -1,12 +1,5 @@
 <!doctype html>
-<!--
-* Bootstrap Simple Admin Template
-* Version: 2.1
-* Author: Alexis Luna
-* Website: https://github.com/alexis-luna/bootstrap-simple-admin-template
--->
 <html lang="en">
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -22,7 +15,6 @@
     @endsection
     @yield('external-css')
 </head>
-
 <body>
 <div class="wrapper">
     <nav id="sidebar" class="active">
@@ -33,14 +25,24 @@
             <li>
                 <a href="{{route('admin.dashboard')}}"><i class="fas fa-home"></i> Dashboard</a>
             </li>
+
             <li>
-                <a href="{{route('admin.wartawan')}}"><i class="fas fa-users"></i>Wartawan</a>
+                <a href="#uielementsmenu" data-bs-toggle="collapse" aria-expanded="false" class="dropdown-toggle no-caret-down"><i class="fas fa-layer-group"></i> Data Master &nbsp;<i class="fa fa-arrow-circle-down"></i></a>
+                <ul class="collapse list-unstyled" id="uielementsmenu">
+                    <li>
+                        <a href="{{route('admin.wartawan')}}"><i class="fas fa-angle-right"></i> Wartawan</a>
+                    </li>
+                    <li>
+                        <a href="{{route('admin.berita')}}"><i class="fas fa-angle-right"></i> Berita</a>
+                    </li>
+                    <li>
+                        <a href="{{route('admin.wilayah')}}"><i class="fas fa-angle-right"></i> Wilayah</a>
+                    </li>
+
+                </ul>
             </li>
             <li>
-                <a href="{{route('admin.berita')}}"><i class="fa fa-book"></i> Berita</a>
-            </li>
-            <li>
-                <a href="{{route('admin.wilayah')}}"><i class="fa fa-globe"></i> Wilayah</a>
+                <a href="{{route('admin.wartawan')}}"><i class="fas fa-file"></i>Rekap</a>
             </li>
         </ul>
     </nav>
@@ -55,7 +57,7 @@
                     <li class="nav-item dropdown">
                         <div class="nav-dropdown">
                             <a href="#" id="nav2" class="nav-item nav-link dropdown-toggle text-secondary" data-bs-toggle="dropdown" aria-expanded="false">
-                                <i class="fas fa-user"></i> <span>{{session()->get('nama')}}</span> <i style="font-size: .8em;" class="fas fa-caret-down"></i>
+                                <i class="fas fa-user-circle"></i> <span style="font-weight: bold;">{{session()->get('nama')}}</span> <i style="font-size: .8em;" class="fas fa-caret-down"></i>
                             </a>
                             <div class="dropdown-menu dropdown-menu-end nav-link-menu">
                                 <ul class="nav-list">
