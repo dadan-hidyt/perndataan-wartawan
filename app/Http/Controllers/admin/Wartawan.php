@@ -34,9 +34,31 @@ class Wartawan extends Controller
     }
     public function delete(Request $request, $kode = null)
     {
-        if ($kode === null) {
+        if ($kode == null) {
             session()->flash('messages', 'gagal menghapus data');
             return redirect(route('admin.wartawan'));
         }
+        if (DB::table('tb_wartawan')->where('kode','=',$kode)->count() > 0) {
+            if (DB::table('tb_wartawan')->where("kode",'=', $kode)->delete()) {
+                session()->flash('messages', 'Data berhasil di hapus');
+                return redirect(route('admin.wartawan'));
+            } else {
+                session()->flash('messages', 'gagal menghapus data');
+                return redirect(route('admin.wartawan'));
+            }
+        }
+    }
+    public function edit($kode = null)
+    {
+        if ($kode === null) {
+            session()->flash('messages', 'gagal mengedit data!');
+            return redirect(route('admin.wartawan'));
+        }
+        if (DB::table('tb_wartawan')->where('kode','=',$kode)->count() === 0) {
+            session()->flash('messages', 'gagal mengedit data!');
+            return redirect(route('admin.wartawan'));
+        }
+        $data = WartawanModel::getWartawan($kode);
+        return view('backend.pages.edit_wartawan', ['data_wartawan'=>$data]);
     }
 }

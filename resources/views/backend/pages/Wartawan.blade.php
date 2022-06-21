@@ -89,8 +89,8 @@
                         </td>
                         <td>{{$data->nama_wilayah}}</td>
                         <td>
-                            <a href="{{route('admin.wartawan.delete', $data->kode)}}"><i class="fa fa-pen-square fa-2x text-secondary"></i></a> &nbsp;
-                            <a href=""><i class="fa fa-trash fa-2x text-danger"></i></a>
+                            <a href="{{route('admin.wartawan.edit', $data->kode)}}"><i class="fa fa-pen-square fa-2x text-secondary"></i></a> &nbsp;
+                            <a onclick="return confirm('Apakah yakin! Ingin menghapus data ini?')" href="{{route('admin.wartawan.delete', $data->kode)}}"><i class="fa fa-trash fa-2x text-danger"></i></a>
                         </td>
                     </tr>
                 @endforeach
