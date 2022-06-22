@@ -58,7 +58,22 @@ class Wartawan extends Controller
             session()->flash('messages', 'gagal mengedit data!');
             return redirect(route('admin.wartawan'));
         }
+        $data_wilayah = WilayahModel::all()->toArray();
         $data = WartawanModel::getWartawan($kode);
-        return view('backend.pages.edit_wartawan', ['data_wartawan'=>$data]);
+        return view('backend.pages.edit_wartawan', ['data_wartawan'=>$data,'data_wilayah' => $data_wilayah]);
+    }
+    public function post_edit(Request $request)
+    {
+        $data = $request->post();
+        $kode = $data['kode'];
+        unset($data['_token']);
+        unset($data['kode']);
+        if (DB::table('tb_wartawan')->where('kode','=',$kode)->update($data)){
+            session()->flash('messages', 'Data berhasil di update!');
+            return redirect(route('admin.wartawan'));
+        } else {
+            session()->flash('messages', 'Data gagal di update!');
+            return redirect(route('admin.wartawan'));
+        }
     }
 }

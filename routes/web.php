@@ -28,6 +28,7 @@ Route::middleware(Autentikasi::class)->group(function (){
     Route::post("/admin/wartawan/post_tambah_wartawan" , [Wartawan::class, 'post_tambah_wartawan'])->name('admin.wartawan.post_tambah_wartawan');
     Route::get("/admin/wartawan/delete/{any}", [Wartawan::class, 'delete'])->name('admin.wartawan.delete');
     Route::get("/admin/wartawan/edit/{any}", [Wartawan::class, 'edit'])->name('admin.wartawan.edit');
+    Route::post("admin/wartawan/post_edit", [Wartawan::class, 'post_edit'])->name('admin.wartawan.post_edit');
     Route::get("/admin/berita", [Home::class, 'index'])->name('admin.berita');
     //route for wilayah
     Route::get("/admin/wilayah", [Wilayah::class, 'index'])->name('admin.wilayah');

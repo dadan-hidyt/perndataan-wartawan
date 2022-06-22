@@ -85,7 +85,7 @@
             'use strict';
 
             $('#wilayah').DataTable({
-                responsive: true,
+                responsive: false,
                 pageLength: 20,
                 lengthChange: false,
                 searching: true,

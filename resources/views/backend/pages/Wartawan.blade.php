@@ -48,7 +48,7 @@
     @endif
     <!-- tabel wartawan -->
     <div class="table-responsive">
-        <table style="width: 1300px" id="wartawan" class="table text-center table-bordered table-hover mt-4">
+        <table style="width: 1500px" id="wartawan" class="table text-center table-bordered table-hover mt-4">
             <thead>
                 <tr>
                     <th>#</th>
@@ -79,7 +79,7 @@
                         <td>{{$data->tempat_lahir}} , {{date('d-m-Y', strtotime($data->tanggal_lahir))}}</td>
                         <td>{{$data->telepon}}</td>
                         <td>{{$data->email}}</td>
-                        <td>{{$data->jk}}</td>
+                        <td>{{strtoupper($data->jk)}}</td>
                         <td>
                             @if(strlen($data->alamat) > 15)
                                 <div title="{{$data->alamat}}">{{substr($data->alamat,0,15)}}...</div>

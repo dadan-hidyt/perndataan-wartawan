@@ -14,6 +14,21 @@
     @section('external-css')
     @endsection
     @yield('external-css')
+    <script>
+            const deviceType = () => {
+                const ua = navigator.userAgent;
+                if (/(tablet|ipad|playbook|silk)|(android(?!.*mobi))/i.test(ua)) {
+                    return "tablet";
+                    alert("Silahkan gunakan PC untuk tampilan lebih baik")
+                }
+                else if (/Mobile|Android|iP(hone|od)|IEMobile|BlackBerry|Kindle|Silk-Accelerated|(hpw|web)OS|Opera M(obi|ini)/.test(ua)) {
+                    return "Mobile";
+                    alert("Silahkan gunakan PC untuk tampilan lebih baik")
+                } else{
+                    return "Dekstop";
+                }
+            };
+    </script>
 </head>
 <body>
 <div class="wrapper">
