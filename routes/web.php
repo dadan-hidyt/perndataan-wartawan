@@ -6,6 +6,7 @@ use \App\Http\Middleware\Autentikasi;
 use App\Http\Controllers\admin\Home;
 use App\Http\Controllers\Admin\Wilayah;
 use App\Http\Controllers\admin\Wartawan;
+use App\Http\Controllers\admin\Berita;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,7 +30,8 @@ Route::middleware(Autentikasi::class)->group(function (){
     Route::get("/admin/wartawan/delete/{any}", [Wartawan::class, 'delete'])->name('admin.wartawan.delete');
     Route::get("/admin/wartawan/edit/{any}", [Wartawan::class, 'edit'])->name('admin.wartawan.edit');
     Route::post("admin/wartawan/post_edit", [Wartawan::class, 'post_edit'])->name('admin.wartawan.post_edit');
-    Route::get("/admin/berita", [Home::class, 'index'])->name('admin.berita');
+    //route for berita
+    Route::get("/admin/berita", [Berita::class, 'index'])->name('admin.berita');
     //route for wilayah
     Route::get("/admin/wilayah", [Wilayah::class, 'index'])->name('admin.wilayah');
     Route::post("/admin/wilayah/add", [Wilayah::class, 'add'])->name('admin.wilayah.add');
