@@ -22,4 +22,16 @@ class Berita extends Controller
            "data_berita" => $data_berita
        ));
    }
+   public function edit(Request $request, $id = null)
+   {
+
+   }
+
+   public function delete($id = null)
+   {
+        if (DB::table('tb_berita')->where("id_berita",'=',$id)->delete()) {
+            echo "true";
+        }
+   }
+
 }

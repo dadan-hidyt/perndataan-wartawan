@@ -25,7 +25,6 @@
                         <th>Honor</th>
                         <th>Action</th>
                     </tr>
-
                 </thead>
                    <tbody>
                    @if(count($data_berita) > 0)
@@ -37,15 +36,15 @@
                                <td>{{date("d-M-Y", strtotime($berita->tanggal_submit))}}</td>
                                <td>{{$berita->honor}}</td>
                                <td>
-                                   <a class="text-secondary" href=""><i class="fa fa-edit fa-2x"></i></a>
+                                   <a class="text-secondary" href="{{route("admin.berita.edit", $berita->id_berita)}}"><i class="fa fa-edit fa-2x"></i></a>
                                    &nbsp;
-                                   <a class="text-danger" href=""><i class="fa fa-trash fa-2x"></i></a>
+                                   <a class="text-danger" href="{{route("admin.berita.delete", $berita->id_berita)}}"><i class="fa fa-trash fa-2x"></i></a>
                                </td>
                            </tr>
                        @endforeach
                    @else
                     <tr>
-                        <td colspan="8"></td>
+                        <td colspan="8">Tidak ada data</td>
                     </tr>
                    @endif
                    </tbody>
