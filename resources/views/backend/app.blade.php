@@ -9,7 +9,7 @@
     <link href="{{asset('assets/vendor/fontawesome/css/solid.min.css')}}" rel="stylesheet">
     <link href="{{asset('assets/vendor/fontawesome/css/brands.min.css')}}" rel="stylesheet">
     <link href="{{asset('assets/vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
-    <link href="{{asset('assets/css/master.css')}}" rel="stylesheet">
+    <link href="{{asset('assets/css/master.css?v=1')}}" rel="stylesheet">
     <link href="{{asset('assets/vendor/flagiconcss/css/flag-icon.min.css')}}" rel="stylesheet">
     @section('external-css')
     @endsection

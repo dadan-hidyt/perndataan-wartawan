@@ -165,7 +165,7 @@ body {
 */
 
 /*------------------------------------------------------------------
-[6. Boxes / .box] 
+[6. Boxes / .box]
 */
 .box {
     position: relative;
@@ -201,7 +201,7 @@ body {
 }
 
 /*------------------------------------------------------------------
-[7. Dashboard Cards / .card] 
+[7. Dashboard Cards / .card]
 */
 .card {
     margin-bottom: 15px;
@@ -237,7 +237,7 @@ body {
 }
 
 /*------------------------------------------------------------------
-[8. Miscellaneous ] 
+[8. Miscellaneous ]
 */
 .line {
     border-bottom: 1px solid #E0E0E0;
@@ -283,7 +283,7 @@ body {
 }
 
 /*------------------------------------------------------------------
-[9. Adjustments to default behaviors] 
+[9. Adjustments to default behaviors]
 */
 a,
 a:hover,
@@ -373,7 +373,7 @@ table.dataTable>tbody>tr.child ul.dtr-details {
 }
 
 /*------------------------------------------------------------------
-[10. Colors / .teal, .olive, .violet, .orange, .darkgray, .blue, .grey] 
+[10. Colors / .teal, .olive, .violet, .orange, .darkgray, .blue, .grey]
 */
 .teal {
     color: #00b5ad !important;
@@ -404,7 +404,7 @@ table.dataTable>tbody>tr.child ul.dtr-details {
 }
 
 /*------------------------------------------------------------------
-[11. Responsive properties] 
+[11. Responsive properties]
 */
 @media (max-width: 768px) {
     .display-absolute {
@@ -460,4 +460,26 @@ table.dataTable>tbody>tr.child ul.dtr-details {
         -ms-flex-direction: row;
         flex-direction: row;
     }
+}
+.table-responsive::-webkit-scrollbar-track
+{
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    background-color: #F5F5F5;
+}
+
+.table-responsive::-webkit-scrollbar
+{
+    width: 6px;
+    height: 10px;
+    background-color: #F5F5F5;
+}
+
+.table-responsive::-webkit-scrollbar-thumb
+{
+    background-color: #FFF;
+    background-image: -webkit-linear-gradient(top,
+    #e4f5fc 0%,
+    #bfe8f9 50%,
+    #9fd8ef 51%,
+    #2ab0ed 100%);
 }

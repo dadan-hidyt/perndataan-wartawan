@@ -41,7 +41,8 @@
                         </div>
                     </div>
                 </div>
-            </div>            <div class="table-responsive-lg">
+            </div>
+            <div class="table-responsive">
                 <table id="wilayah" class="table col-md-10 table-striped table-hover">
                     <thead>
                     <tr>
@@ -87,7 +88,7 @@
             $('#wilayah').DataTable({
                 responsive: false,
                 pageLength: 20,
-                lengthChange: false,
+                lengthChange: true,
                 searching: true,
                 ordering: true
             });

@@ -14,8 +14,12 @@ class CreateTbBerita extends Migration
     public function up()
     {
         Schema::create('tb_berita', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+            $table->id('id_berita');
+            $table->string("kode_wartawan");
+            $table->string('judul_berita');
+            $table->string('link_berita');
+            $table->date('tanggal_submit');
+            $table->integer("honor");
         });
     }
 

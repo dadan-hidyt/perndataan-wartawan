@@ -6,34 +6,6 @@
             border-radius: 0;
             margin-top: 3px;
         }
-
-        /*
-         *  STYLE 3
-         */
-
-        .table-responsive::-webkit-scrollbar-track
-        {
-            -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-            background-color: #F5F5F5;
-        }
-
-        .table-responsive::-webkit-scrollbar
-        {
-            width: 6px;
-            height: 10px;
-            background-color: #F5F5F5;
-        }
-
-        .table-responsive::-webkit-scrollbar-thumb
-        {
-            background-color: #FFF;
-            background-image: -webkit-linear-gradient(top,
-            #e4f5fc 0%,
-            #bfe8f9 50%,
-            #9fd8ef 51%,
-            #2ab0ed 100%);
-        }
-
     </style>
 <div class="container">
     <div class="page-title">
