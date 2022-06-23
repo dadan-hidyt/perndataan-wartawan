@@ -3,10 +3,10 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use \App\Http\Controllers\AuthController;
 use \App\Http\Middleware\Autentikasi;
-use App\Http\Controllers\admin\Home;
+use App\Http\Controllers\Admin\Home;
 use App\Http\Controllers\Admin\Wilayah;
-use App\Http\Controllers\admin\Wartawan;
-use App\Http\Controllers\admin\Berita;
+use App\Http\Controllers\Admin\Wartawan;
+use App\Http\Controllers\Admin\Berita;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,8 +32,10 @@ Route::middleware(Autentikasi::class)->group(function (){
     Route::post("admin/wartawan/post_edit", [Wartawan::class, 'post_edit'])->name('admin.wartawan.post_edit');
     //route for berita
     Route::get("/admin/berita", [Berita::class, 'index'])->name('admin.berita');
+    Route::post("/admin/berita/post_tambah_berita", [Berita::class,'post_tambah_berita'])->name('admin.berita.post_tambah_berita');
     Route::get("/admin/berita/delete/{id}", [Berita::class, 'delete'])->name('admin.berita.delete');
     Route::get("/admin/berita/edit/{id}", [Berita::class, 'edit'])->name('admin.berita.edit');
+    Route::post('admin/berita/post_edit',[Berita::class,'post_edit'])->name('admin.berita.post_edit_berita');
     //route for wilayah
     Route::get("/admin/wilayah", [Wilayah::class, 'index'])->name('admin.wilayah');
     Route::post("/admin/wilayah/add", [Wilayah::class, 'add'])->name('admin.wilayah.add');

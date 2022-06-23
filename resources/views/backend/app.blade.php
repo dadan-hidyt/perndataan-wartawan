@@ -11,6 +11,7 @@
     <link href="{{asset('assets/vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
     <link href="{{asset('assets/css/master.css?v=1')}}" rel="stylesheet">
     <link href="{{asset('assets/vendor/flagiconcss/css/flag-icon.min.css')}}" rel="stylesheet">
+    <meta name="csrf-token" content="{{csrf_token()}}">
     @section('external-css')
     @endsection
     @yield('external-css')

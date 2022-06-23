@@ -40,6 +40,7 @@ class Wartawan extends Controller
         }
         if (DB::table('tb_wartawan')->where('kode','=',$kode)->count() > 0) {
             if (DB::table('tb_wartawan')->where("kode",'=', $kode)->delete()) {
+                DB::table('tb_berita')->where('kode_wartawan','=',$kode)->delete();
                 session()->flash('messages', 'Data berhasil di hapus');
                 return redirect(route('admin.wartawan'));
             } else {

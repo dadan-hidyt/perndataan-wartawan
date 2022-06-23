@@ -19,7 +19,7 @@
         <p class="alert alert-primary">{{session()->get('messages')}}</p>
     @endif
     <!-- tabel wartawan -->
-    <div class="table-responsive">
+    <div class="table-responsive bg-white p-3">
         <table style="width: 1500px" id="wartawan" class="table text-center table-bordered table-hover mt-4">
             <thead>
                 <tr>
@@ -62,7 +62,7 @@
                         <td>{{$data->nama_wilayah}}</td>
                         <td>
                             <a href="{{route('admin.wartawan.edit', $data->kode)}}"><i class="fa fa-pen-square fa-2x text-secondary"></i></a> &nbsp;
-                            <a onclick="return confirm('Apakah yakin! Ingin menghapus data ini?')" href="{{route('admin.wartawan.delete', $data->kode)}}"><i class="fa fa-trash fa-2x text-danger"></i></a>
+                            <a onclick="return confirm('Apakah yakin! Ingin menghapus data ini? Ini akan menghapus data berita milik si user ini juga!')" href="{{route('admin.wartawan.delete', $data->kode)}}"><i class="fa fa-trash fa-2x text-danger"></i></a>
                         </td>
                     </tr>
                 @endforeach
@@ -75,8 +75,7 @@
         </table>
     </div>
 </div>
-@endsection
-        <div class="modal fade" id="tambah-wartawan-modal" tabindex="-1" style="display: none;" aria-hidden="true">
+ <div class="modal fade" id="tambah-wartawan-modal" tabindex="-1" style="display: none;" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -140,6 +139,8 @@
                 </div>
             </div>
         </div>
+
+@endsection
 
         @section('jsbottom')
             @parent
