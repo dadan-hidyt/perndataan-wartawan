@@ -58,7 +58,7 @@
                 </ul>
             </li>
             <li>
-                <a href="{{route('admin.wartawan')}}"><i class="fas fa-file"></i>Rekap</a>
+                <a href="{{route('admin.rekap')}}"><i class="fas fa-file"></i>Rekap</a>
             </li>
         </ul>
     </nav>

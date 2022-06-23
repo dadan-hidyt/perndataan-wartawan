@@ -7,7 +7,7 @@ use App\Http\Controllers\Admin\Home;
 use App\Http\Controllers\Admin\Wilayah;
 use App\Http\Controllers\Admin\Wartawan;
 use App\Http\Controllers\Admin\Berita;
-
+use App\Http\Controllers\admin\Rekap;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -40,6 +40,10 @@ Route::middleware(Autentikasi::class)->group(function (){
     Route::get("/admin/wilayah", [Wilayah::class, 'index'])->name('admin.wilayah');
     Route::post("/admin/wilayah/add", [Wilayah::class, 'add'])->name('admin.wilayah.add');
     Route::get("/admin/wilayah/delete/{any}", [Wilayah::class, 'delete'])->name('admin.wilayah.delete');
+    //for rekap
+    Route::get('/admin/rekap',[Rekap::class,'index'])->name('admin.rekap');
+    Route::get('/admin/rekap/export_excel',[Rekap::class,'export_excel'])->name('admin.rekap.export_excel');
+
 });
 #route untuk logout
 Route::get('logout', function (){
